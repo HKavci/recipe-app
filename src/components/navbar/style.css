@@ -1,0 +1,14 @@
+.navbar-brand {
+    background-color: rgba(240, 248, 255, 0.3);
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.nav-link {
+    background-color: rgba(240, 248, 255, 0.3);
+    font-weight: bold;
+}
+
+.navbar-toggler {
+    background-color: rgba(240, 248, 255, 0.3);
+}
