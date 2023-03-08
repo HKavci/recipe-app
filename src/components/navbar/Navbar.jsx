@@ -1,7 +1,13 @@
 import { NavLink } from "react-router-dom";
 import "./style.css"
 
-const Navbar = () => {
+const Navbar = ({currentUser, setCurrentUser}) => {
+
+  const logout = () => {
+    setCurrentUser(false)
+    sessionStorage.clear()
+  }
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary mx-4 fs-4">
       <div className="container-fluid">
@@ -25,20 +31,27 @@ const Navbar = () => {
               className="nav-link"
               to="/"
             >
-              HOME
+              Home
             </NavLink>
             <NavLink
               className="nav-link"
               to="/about"
             >
-              ABOUT
+              About
             </NavLink>
-            <a className="nav-link" href="https://github.com/HKavci/recipe-app" target="_blank">
-              GITHUB
+            <a className="nav-link" href="https://github.com/HKavci/recipe-app" target="_blank" rel="noreferrer">
+              GitHub
             </a>
-            <NavLink className="nav-link" to="/login">
-              LOG OUT
-            </NavLink>
+            {currentUser ? (
+              <NavLink className="nav-link" to="/login" onClick={logout}>
+              Log Out
+              </NavLink>
+            ) : (
+              <NavLink className="nav-link" to="/login">
+              Log In
+              </NavLink>
+            )}
+            
           </div>
         </div>
       </div>

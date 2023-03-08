@@ -12,9 +12,9 @@ const Home = () => {
   const APP_KEY= process.env.REACT_APP_KEY
   const APP_ID= process.env.REACT_APP_ID
 
-  const BASE_URL = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${meal}` 
-
+  
   const getData = async () => {
+    const BASE_URL = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${meal}` 
     try {
       const {data} = await axios (BASE_URL)
       setFoodlist(data.hits)
@@ -22,17 +22,15 @@ const Home = () => {
       console.log(error)
     }
   } 
-  console.log(foodlist)
   
   useEffect(() => {
     getData()
     setMeal("breakfast")
   }, [])
-
+  
   
   const handleChange = (e) => {
     setQuery(e.target.value)
-    // getData()
   }
 
   const handleMealChange = (e) => {
@@ -44,8 +42,6 @@ const Home = () => {
     getData();
   }
 
-  
-  
   return (
     <div>
       <h3 className="text-center mx-auto mt-5 mb-4 fw-bold text-primary rounded">RECIPE APP</h3>
@@ -78,8 +74,6 @@ const Home = () => {
           <RecipeCard item={item} key={index} getData={getData} />
       ))}
       </div>
-      
-      
     </div>
   );
 };

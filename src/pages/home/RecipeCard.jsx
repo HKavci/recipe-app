@@ -1,7 +1,7 @@
-import {NavLink, useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 
 
-const RecipeCard = ({item, getData}) => {
+const RecipeCard = ({item}) => {
   const navigate = useNavigate()
   
   return (

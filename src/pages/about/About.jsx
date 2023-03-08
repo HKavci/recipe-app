@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="container p-5 mt-5">
+    <div className="container p-5 mt-5 rounded text-light">
       <h4 className="text-center">ABOUT RECIPES</h4>
       <p className="">
         &nbsp;&nbsp;&nbsp; A recipe is a formula of ingredients and a list of
