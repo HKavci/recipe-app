@@ -1,6 +1,10 @@
 
 body {
-    background-image: url("https://picsum.photos/1600/900");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url("https://picsum.photos/1600/900");    
+}
+
+@media only screen and (min-width: 1200px) {
+    body {
+        background-size: cover;
+    }
 }
