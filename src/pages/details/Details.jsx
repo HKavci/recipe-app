@@ -10,7 +10,7 @@ const Details = () => {
     <div className="container mt-5 mx-auto text-light" style={{ maxWidth: "40rem" }}>
       <div className="card-body ms-3">
         <h4 className="card-title text-center mb-3 pt-4" style={{maxWidth: "80vw"}}>{item.recipe.label}</h4>
-        <p>{item.recipe.dietLabels[0]} / {item.recipe.dietLabels[1]}  {item.recipe.dietLabels[2]}</p>
+        <p>{item.recipe.dietLabels[0]} / {item.recipe.dietLabels[1]} {item.recipe.dietLabels[2]}</p>
         <h6>Ingredients:</h6>
         <ul className="card-text" style={{maxWidth: "80vw"}} >
           {item.recipe.ingredientLines.map((elem, i) => {
@@ -21,7 +21,9 @@ const Details = () => {
         <ul className="list">
           {totalDailyList.map((element, key)=>{
             return(
+              (element[1].quantity.toFixed(2) !== "0.00") && (
               <li key={key}>{element[1].label}: {element[1].unit}{element[1].quantity.toFixed(2)}</li>
+              )
             )
           })}
         </ul>
