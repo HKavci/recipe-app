@@ -29,10 +29,10 @@ const Details = () => {
         </ul>
       </div>
       <div className="card-body d-flex gap-3 ms-4 pb-3">
-        <a href={item.recipe.url} target="_blank" className="card-link" role="button">
+        <a href={item.recipe.url} target="_blank" rel="noreferrer" className="card-link" role="button">
           More Information
         </a>
-        <a href={item.recipe.shareAs} target="_blank" className="card-link" role="button">
+        <a href={item.recipe.shareAs} target="_blank" rel="noreferrer" className="card-link" role="button">
           Another Link
         </a>
       </div>

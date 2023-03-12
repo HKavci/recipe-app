@@ -8,7 +8,6 @@ const Navbar = ({currentUser, setCurrentUser}) => {
     sessionStorage.clear()
   }
 
-  console.log(currentUser);
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary mx-4 fs-4">
       <div className="container-fluid">
@@ -43,11 +42,15 @@ const Navbar = ({currentUser, setCurrentUser}) => {
             <a className="nav-link" href="https://github.com/HKavci/recipe-app" target="_blank" rel="noreferrer">
               GitHub
             </a>
-            
+              {currentUser ?
               <NavLink className="nav-link" to="/login" onClick={logout}>
-                {currentUser ? "Log Out" : "Log In"}
+                Log Out
               </NavLink>
-           
+              :
+              <NavLink className="nav-link" to="/login">
+                Log In
+              </NavLink>
+              }
             
           </div>
         </div>

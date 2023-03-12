@@ -8,10 +8,9 @@ const Home = () => {
   const [foodlist, setFoodlist] = useState([])
   const [query, setQuery] = useState("")
   const [meal, setMeal] = useState("")
-
+  
   const APP_KEY= process.env.REACT_APP_KEY
   const APP_ID= process.env.REACT_APP_ID
-
   
   const getData = async () => {
     const BASE_URL = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${meal}` 
@@ -24,7 +23,6 @@ const Home = () => {
   } 
   
   useEffect(() => {
-    getData()
     setMeal("breakfast")
   }, [])
   

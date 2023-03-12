@@ -16,10 +16,10 @@ function App() {
   )
   return (
     <div>
-      <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
+      <Navbar key={currentUser} currentUser={currentUser} setCurrentUser={setCurrentUser} />
       <Routes>
         <Route path='/' element={<PrivateRouter />} >
-          <Route path='' element={<Home />} />
+          <Route path='' element={<Home currentUser={currentUser} />} />
         </Route>
         <Route path='/details' element={<Details />} />
         <Route path='/about' element={<About />} />
