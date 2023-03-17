@@ -7,16 +7,12 @@ import About from "./pages/about/About";
 import Login from "./pages/login/Login";
 import PrivateRouter from "./router/PrivateRouter";
 import Footer from "./components/footer/Footer";
-import { useState } from "react";
 import Register from "./pages/register/Register";
 import AuthContextProvider from "./context/AuthContextProvider";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-  const [currentUser, setCurrentUser] = useState(
-    sessionStorage.getItem("user") || false
-  );
   return (
     <>
       <AuthContextProvider>
