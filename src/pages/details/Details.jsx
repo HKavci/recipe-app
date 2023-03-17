@@ -1,8 +1,9 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./style.css"
 
 const Details = () => {
   const { state: item } = useLocation();
+  const navigate = useNavigate()
 
   const totalDailyList = Object.entries(item.recipe.totalDaily)
 
@@ -36,6 +37,7 @@ const Details = () => {
           Another Link
         </a>
       </div>
+      <button className="btn btn-warning ms-4" onClick={()=>navigate(-1)}>Home Page</button>
     </div>
   );
 };
