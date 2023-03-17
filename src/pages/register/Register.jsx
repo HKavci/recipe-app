@@ -3,7 +3,7 @@ import { AuthContext } from "../../context/AuthContextProvider";
 import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext)
+    const {createUser, signUpProvider} = useContext(AuthContext)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
@@ -71,7 +71,7 @@ const Register = () => {
         <button type="submit" className="btn btn-primary">
         Sign Up
       </button>
-      <button type="button" className="btn btn-primary">
+      <button type="button" className="btn btn-primary" onClick={()=>signUpProvider()}>
         <FcGoogle />
         Sign Up with Google
       </button>
