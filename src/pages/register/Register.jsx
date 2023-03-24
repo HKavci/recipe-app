@@ -1,21 +1,22 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContextProvider";
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 const Register = () => {
-    const {createUser, signUpProvider} = useContext(AuthContext)
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+  const { createUser, signUpProvider } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    createUser(email, password)
-  }
+    e.preventDefault();
+    createUser(email, password);
+  };
 
   return (
     <form
       className="container w-50 mt-5 border bg-light p-3 rounded"
-      style={{maxWidth: "23rem", minWidth: "18rem", minHeight: "24rem"}}
+      style={{ maxWidth: "23rem", minWidth: "18rem", minHeight: "24rem" }}
       onSubmit={handleSubmit}
     >
       <div className="mb-3">
@@ -52,7 +53,7 @@ const Register = () => {
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           required
-          onChange={(e)=>setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <div className="mb-3">
@@ -64,17 +65,24 @@ const Register = () => {
           className="form-control"
           id="exampleInputPassword1"
           required
-          onChange={(e)=>setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
         />
       </div>
       <div className="d-grid gap-2 justify-content-center mt-4">
         <button type="submit" className="btn btn-primary">
-        Sign Up
-      </button>
-      <button type="button" className="btn btn-primary" onClick={()=>signUpProvider()}>
-        <FcGoogle />
-        Sign Up with Google
-      </button>
+          Sign Up
+        </button>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={() => signUpProvider()}
+        >
+          <FcGoogle />
+          Sign Up with Google
+        </button>
+      </div>
+      <div className="d-flex justify-content-center mt-1">
+        <Link to="/login">Do you have an account?</Link>
       </div>
     </form>
   );

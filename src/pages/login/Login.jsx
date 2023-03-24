@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContextProvider";
 import { FcGoogle } from "react-icons/fc";
 
@@ -67,6 +67,9 @@ const Login = () => {
           <FcGoogle />
           <span>Sign in with Google</span>
         </button>
+      </div>
+      <div className="d-flex justify-content-center mt-1">
+        <Link to="/register">Do you have not an account?</Link>
       </div>
     </form>
   );
