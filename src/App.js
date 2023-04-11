@@ -9,20 +9,20 @@ import PrivateRouter from "./router/PrivateRouter";
 import Footer from "./components/footer/Footer";
 import Register from "./pages/register/Register";
 import AuthContextProvider from "./context/AuthContextProvider";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <>
       <AuthContextProvider>
-        <ToastContainer/>
-        <Navbar/>
+        <ToastContainer />
+        <Navbar />
         <Routes>
-          <Route path="/" element={<PrivateRouter />}>
-            <Route path="" element={<Home />} />
+          <Route path="/details" element={<PrivateRouter />}>
+            <Route path="" element={<Details />} />
           </Route>
-          <Route path="/details" element={<Details />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
