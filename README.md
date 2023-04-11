@@ -1,4 +1,5 @@
 # Recipe App
+The Recipe App is a platform where users can search and view recipe categories. In order to view detailed information about recipes, users need to log in. The site is categorized to make it easy for users to find recipes, and users can find the recipes they are looking for.
 
 ## Outcome
 ![Project Gif](./src/assets/recipe-app.gif)
